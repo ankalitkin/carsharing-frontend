@@ -1,0 +1,40 @@
+ru:
+  title: Добро пожаловать в Каршеринг
+  form:
+    label:
+      name: Имя
+      login: Логин
+      password: Пароль
+      password2: Подтверждение пароля
+    error:
+      name_required: Необходимо ввести имя
+      login_required: Необходимо ввести логин
+      password_required: Необходимо ввести пароль
+      password_mismatch: Пароли не совпадают
+    button: Зарегистрироваться
+  text_lower: Для регистрации введите своё имя, придумайте логин и пароль
+  success: Регистрация пройдена успешно!
+  loading: Загрузка...
+  error:
+    400: Логин уже занят
+    default: Произошла непредвиденная ошибка ({errCode})
+en:
+  title: Welcome to Carsharing
+  form:
+    label:
+      login: Login
+      name: Name
+      password: Password
+      password2: Password confirmation
+    error:
+      name_required: Name is required
+      login_required: Login is required
+      password_required: Password is required
+      password_mismatch: Passwords don't match
+    button: Register
+  text_lower: To register, enter your name, create login and password.
+  success: Registered successfully!
+  loading: Loading...
+  error:
+    400: This login already exists
+    default: An unexpected error occurred ({errCode})

@@ -1,0 +1,8 @@
+ru:
+  title: Страница не найдена
+  description: Страница, которую вы запросили, не найдена.
+  home_link: Вернуться на главную
+en:
+  title: Page not found
+  description: The page you are looking for was not found.
+  home_link: Back to home

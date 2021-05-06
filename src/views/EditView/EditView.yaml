@@ -1,0 +1,42 @@
+ru:
+  title: Редактирование профиля
+  form:
+    label:
+      name: Имя
+      login: Логин
+      about: О себе
+      new_password: Новый пароль
+      old_password: Старый пароль
+      confirm_password: Подтверждение пароля
+    error:
+      name_required: Необходимо ввести имя
+      login_required: Необходимо ввести логин
+      password_mismatch: Пароли не совпадают
+    button: Подтвердить изменения
+  success: Изменеия приняты!
+  loading: Загрузка...
+  error:
+    400: Введён неверный пароль
+    409: Логин уже занят
+    default: Произошла непредвиденная ошибка ({errCode})
+en:
+  title: Welcome to Carsharing
+  form:
+    label:
+      login: Login
+      name: Name
+      about: About me
+      new_password: New password
+      old_password: Old password
+      confirm_password: Password confirmation
+    error:
+      name_required: Name is required
+      login_required: Login is required
+      password_mismatch: Passwords don't match
+    button: Submit changes
+  success: Edited successfully!
+  loading: Loading...
+  error:
+    400: Old password is uncorrect
+    409: This login already exists
+    default: An unexpected error occurred ({errCode})
