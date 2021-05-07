@@ -1,15 +1,22 @@
 import Vue from 'vue'
 import VueRouter, {RouteConfig} from 'vue-router'
 import {SecurityService} from "@/security/SecurityService";
-
 const LoginView = () => import( "@/views/LoginView/LoginView.vue");
-const RegistrationView = () => import("@/views/RegistrationView/RegistrationView.vue");
 const PageNotFoundView = () => import( "@/views/PageNotFoundView/PageNotFoundView.vue");
 const EditView = () => import("@/views/EditView/EditView.vue")
+const Home = () => import( "@/components/Home.vue");
 
 Vue.use(VueRouter);
 
 const routes: RouteConfig[] = [
+    {
+        path: '/',
+        name: 'Home',
+        component: Home,
+        meta: {
+            authorized: true
+        }
+    },
     {
         path: '/editProfile',
         name: 'EditView',
@@ -21,10 +28,6 @@ const routes: RouteConfig[] = [
         path: '/login',
         name: 'LoginView',
         component: LoginView
-    }, {
-        path: '/registration',
-        name: 'RegistrationView',
-        component: RegistrationView
     },
     {
         path: '/logout',
