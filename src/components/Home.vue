@@ -91,7 +91,8 @@
                     <template
                             v-for="a2 in declaration ? declaration.attributes.filter(value => value.type === AttributeType.Date) : []"
                             v-slot:[`item.${a2.name}`]="prop">
-                        <datetime :key="a2.name + prop.value" :time-str="new Date(prop.value)"/>
+                      <span :key="a2.name + prop.value" v-if="!prop.value" class="text--disabled">null</span>
+                      <datetime :key="a2.name + prop.value" v-else :time-str="new Date(prop.value)"/>
                     </template>
 
                     <template

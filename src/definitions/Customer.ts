@@ -1,9 +1,9 @@
 import {EntityDeclaration} from "@/models/crud/EntityDeclatarion";
 import {AttributeType} from "@/models/crud/AttributeType";
 
-export const Employee: EntityDeclaration = {
-    name: "employee",
-    displayName: "Сотрудник",
+export const Customer: EntityDeclaration = {
+    name: "customer",
+    displayName: "Клиент",
     attributes: [
         {
             name: "id",
@@ -16,24 +16,24 @@ export const Employee: EntityDeclaration = {
             type: AttributeType.Text
         },
         {
-            name: "roles",
-            displayName: "Роли",
+            name: "phoneNumber",
+            displayName: "Номер телефона",
             type: AttributeType.Text
         },
         {
-            name: "login",
-            displayName: "Логин",
+            name: "selfieFilename",
+            displayName: "Файл селфи",
             type: AttributeType.Text
         },
         {
-            name: "newPassword",
-            displayName: "Задать пароль",
-            type: AttributeType.Password
-        },
-        {
-            name: "deleted",
-            displayName: "Удалён ли",
+            name: "profileConfirmed",
+            displayName: "Подтверждён ли",
             type: AttributeType.Boolean
+        },
+        {
+            name: "bannedUntil",
+            displayName: "Забанен до",
+            type: AttributeType.Date
         }
     ]
 };
