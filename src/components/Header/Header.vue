@@ -1,24 +1,23 @@
 <i18n src="./Header.yaml"/>
 <template>
   <v-app-bar app color="primary" dark>
-    <router-link :event="isUser ? 'click' : ''" tag="span" to="/">
+    <router-link tag="span" to="/">
       <div class="myTitle">
         {{ $t('title') }}
       </div>
     </router-link>
     <span v-if="isAuthorized">
-<!--            <router-link tag="span" to="/" v-if="isUser">-->
-      <!--                <v-btn color="primary" dark depressed>{{$t('feed')}}</v-btn>-->
-      <!--            </router-link>-->
-      <!--            <router-link tag="span" to="/tasks" v-if="isUser">-->
-      <!--                <v-btn color="primary" dark depressed>{{$t('tasks')}}</v-btn>-->
-      <!--            </router-link>-->
-      <!--            <router-link tag="span" to="/profile" v-if="isUser">-->
-      <!--                <v-btn color="primary" dark depressed>{{$t('profile')}}</v-btn>-->
-      <!--            </router-link>-->
+            <router-link tag="span" to="/" v-if="isAuthorized">
+                      <v-btn color="primary" dark depressed>{{$t('home')}}</v-btn>
+                  </router-link>
+                  <router-link tag="span" to="/cars" v-if="isAuthorized">
+                      <v-btn color="primary" dark depressed>{{$t('cars')}}</v-btn>
+                  </router-link>
+                  <router-link tag="span" to="/docs" v-if="isAuthorized">
+                      <v-btn color="primary" dark depressed>{{$t('docs')}}</v-btn>
+                  </router-link>
         </span>
     <span class="right">
-            <language-selector/>
             <router-link v-if="!isAuthorized" tag="span" to="/registration">
                 <v-btn color="primary" dark depressed>{{ $t('registration') }}</v-btn>
             </router-link>

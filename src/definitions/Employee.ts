@@ -4,6 +4,7 @@ import {AttributeType} from "@/models/crud/AttributeType";
 export const Employee: EntityDeclaration = {
     name: "employee",
     displayName: "Сотрудник",
+    adminOnly: true,
     attributes: [
         {
             name: "id",

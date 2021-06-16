@@ -36,15 +36,7 @@ export class SecurityService {
     }
 
     public static isAdmin(): boolean {
-        return this.checkAuthority("Admin");
-    }
-
-    public static isModerator(): boolean {
-        return this.checkAuthority("Moderator");
-    }
-
-    public static isUser(): boolean {
-        return this.checkAuthority("User");
+        return this.checkAuthority("ADMIN");
     }
 
     private static checkAuthority(authority: string) {

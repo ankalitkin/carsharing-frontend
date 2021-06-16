@@ -28,7 +28,7 @@
         >
             <v-spacer></v-spacer>
             <v-btn
-                    @click="menu = false"
+                    @click="date=undefined; $refs.menu.save(date); menu = false"
                     color="primary"
                     text
             >
@@ -52,7 +52,7 @@
     export default class DatePicker extends Vue {
         @Prop() value?: Date;
         @Prop() label?: string;
-        date: Date | null = this.value ? new Date(this.value) : null;
+        date = this.value;
         menu = false;
         locale = 'ru';
 
@@ -70,8 +70,8 @@
         }
 
         @Watch("date")
-        private push(val: Date | null): void {
-            this.$emit('input', val);
+        private push(val: Date | null | undefined): void {
+            this.$emit('input', val || null);
         }
     }
 </script>

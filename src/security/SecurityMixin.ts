@@ -23,16 +23,4 @@ export default class SecurityMixin extends Vue {
     protected get isAdmin(): boolean {
         return SecurityService.isAdmin();
     }
-
-    protected get isModerator(): boolean {
-        return SecurityService.isModerator();
-    }
-
-    protected get isModeratorOrAdmin(): boolean {
-        return this.isAdmin || this.isModerator;
-    }
-
-    protected get isUser(): boolean {
-        return SecurityService.isUser();
-    }
 }

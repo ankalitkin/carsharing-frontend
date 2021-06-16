@@ -6,4 +6,5 @@ export interface EntityDeclaration {
     displayName: string;
     attributes: (AttributeDeclaration | ReferenceDeclaration)[];
     readOnly?: boolean;
+    adminOnly?: boolean;
 }

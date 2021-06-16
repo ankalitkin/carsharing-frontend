@@ -2,8 +2,8 @@ import {Language} from "@/models/Language";
 
 export class CurrentLanguageService {
     public static readonly languages: Language[] = [
-        {code: 'en', nativeName: 'English'},
         {code: 'ru', nativeName: 'Русский'},
+//        {code: 'en', nativeName: 'English'},
     ];
 
     public static getLanguage(): string {
