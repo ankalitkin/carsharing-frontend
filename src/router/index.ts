@@ -7,6 +7,7 @@ const PageNotFoundView = () => import( "@/views/PageNotFoundView/PageNotFoundVie
 const EditView = () => import("@/views/EditView/EditView.vue")
 const Home = () => import( "@/components/Home.vue");
 const CarMap = () => import( "@/components/CarMap.vue");
+const CustomerCarMap = () => import( "@/components/CustomerCarMap.vue");
 
 Vue.use(VueRouter);
 
@@ -16,7 +17,7 @@ const routes: RouteConfig[] = [
         name: 'Home',
         component: Home,
         meta: {
-            authorized: true
+            employee: true
         }
     },
     {
@@ -24,15 +25,19 @@ const routes: RouteConfig[] = [
         name: 'CarMap',
         component: CarMap,
         meta: {
-            authorized: true
+            employee: true
         }
+    },    {
+        path: '/map',
+        name: 'CustomerCarMap',
+        component: CustomerCarMap,
     },
     {
         path: '/editProfile',
         name: 'EditView',
         component: EditView,
         meta: {
-            authorized: true
+            employee: true
         }
     }, {
         path: '/login',
@@ -60,9 +65,13 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
-    if (to.meta.authorized && !SecurityService.isAuthorized()
+    if (to.meta.employee && !SecurityService.isEmployee()
         || to.meta.admin && !SecurityService.isAdmin()) {
-        next('/login');
+        if (!SecurityService.isAuthorized() || SecurityService.isEmployee()) {
+            next('/login');
+        } else {
+            next('/map');
+        }
     } else next()
 });
 

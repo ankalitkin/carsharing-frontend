@@ -29,6 +29,7 @@
               </template>
             </v-list-item>
           </v-list>
+          <car-photo-uploader :car-id="editedItem.id" v-if="declaration.name === 'car'"/>
         </v-container>
         <span :key="errCode" class="error--text" v-if="errCode">
           Введены неверные данные
@@ -45,10 +46,11 @@
 <script lang="ts">
 import DatePicker from "@/components/DatePicker.vue"
 import ReferenceSelector from "@/components/ReferenceSelector.vue"
+import CarPhotoUploader from "@/components/CarPhotoUploader.vue";
 
 export default {
   name: 'EditDialog',
-  components: {DatePicker, ReferenceSelector},
+  components: {CarPhotoUploader, DatePicker, ReferenceSelector},
   props: {
     AttributeType: {},
     close: {},

@@ -1,13 +1,14 @@
 import {TokenModel} from "@/models/TokenModel";
 import {EmployeeModel} from "@/models/EmployeeModel";
 import store from "@/store"
+import {CustomerModel} from "@/models/CustomerModel";
 
 export class SecurityService {
     public static getTokenData(): string | null {
         return store.getters.getTokenData;
     }
 
-    public static getUser(): EmployeeModel | null {
+    public static getUser(): EmployeeModel | CustomerModel | null {
         return store.getters.getUser;
     }
 
@@ -35,8 +36,12 @@ export class SecurityService {
         return !!this.getTokenData() && !!this.getUser();
     }
 
+    public static isEmployee(): boolean {
+        return this.checkAuthority("Employee");
+    }
+
     public static isAdmin(): boolean {
-        return this.checkAuthority("ADMIN");
+        return this.checkAuthority("Admin");
     }
 
     private static checkAuthority(authority: string) {

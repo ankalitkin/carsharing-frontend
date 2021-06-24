@@ -1,6 +1,7 @@
 import {PersistentStorageService} from "@/services/PersistentStorageService";
 import {TokenModel} from "@/models/TokenModel";
 import {EmployeeModel} from "@/models/EmployeeModel";
+import {CustomerModel} from "@/models/CustomerModel";
 
 export interface AuthModuleState {
     auth: TokenModel | null;
@@ -41,10 +42,10 @@ export const authModule = {
                 return null
             return state.auth.tokenData;
         },
-        getUser(state: AuthModuleState): EmployeeModel | null {
+        getUser(state: AuthModuleState): EmployeeModel | CustomerModel | null {
             if (!state.auth)
                 return null
-            return state.auth.employee;
+            return state.auth.employee || state.auth.customer;
         },
         getAuthorities(state: AuthModuleState): string[] | null {
             if (!state.auth)

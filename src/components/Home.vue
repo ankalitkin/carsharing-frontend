@@ -90,6 +90,7 @@ import {AttributeDeclaration} from "@/models/crud/AttributeDeclaration";
 import IconButtonTooltip from "@/components/IconButtonTooltip.vue";
 import SecurityMixin from "@/security/SecurityMixin";
 import EditDialog from "@/components/EditDialog.vue";
+import {TitleService} from "@/services/TitleService";
 
 @Component({
   components: {EditDialog, IconButtonTooltip, DatePicker, ReferenceSelector, Datetime, Reference}
@@ -110,6 +111,10 @@ export default class Home extends Mixins(SecurityMixin) {
   editedIndex = -1;
   editedItem: any = {}
   defaultItem: any = {}
+
+  created() {
+    TitleService.setTitle("Администрирование");
+  }
 
   get formTitle() {
     return this.editedIndex === -1 ? 'Новый элемент' : 'Изменить элемент'

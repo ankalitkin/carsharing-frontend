@@ -29,6 +29,11 @@ export const Log: EntityDeclaration = {
             name: "value",
             displayName: "Значение",
             type: AttributeType.Text
+        },
+        {
+            name: "timestamp",
+            displayName: "Дата и время",
+            type: AttributeType.Text,
         }
     ]
 };

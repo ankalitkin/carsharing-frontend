@@ -1,6 +1,7 @@
 import {Component, Vue} from 'vue-property-decorator';
 import {SecurityService} from '@/security/SecurityService';
 import {EmployeeModel} from "@/models/EmployeeModel";
+import {CustomerModel} from "@/models/CustomerModel";
 
 @Component
 export default class SecurityMixin extends Vue {
@@ -12,7 +13,7 @@ export default class SecurityMixin extends Vue {
         return SecurityService.getTokenData();
     }
 
-    protected get user(): EmployeeModel | null {
+    protected get user(): EmployeeModel | CustomerModel | null {
         return SecurityService.getUser();
     }
 
@@ -22,5 +23,9 @@ export default class SecurityMixin extends Vue {
 
     protected get isAdmin(): boolean {
         return SecurityService.isAdmin();
+    }
+
+    protected get isEmployee(): boolean {
+        return SecurityService.isEmployee();
     }
 }

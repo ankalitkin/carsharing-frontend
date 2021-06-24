@@ -6,16 +6,20 @@
         <router-view/>
       </v-container>
     </v-content>
+    <ModalDialog/>
+    <Snackbar/>
   </v-app>
 </template>
 <script lang="ts">
 import prepareAxios from '@/axios';
 import {Component, Vue} from "vue-property-decorator";
-import Header from "@/components/Header/Header.vue";
+import Header from "@/components/Header.vue";
+import Snackbar from "@/components/Snackbar.vue";
+import ModalDialog from "@/components/ModalDialog.vue";
 
 prepareAxios();
 @Component({
-  components: {Header}
+  components: {Header, Snackbar, ModalDialog}
 })
 export default class App extends Vue {
 }
